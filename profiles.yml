@@ -1,0 +1,39 @@
+dbt_demo:
+  outputs:
+    dev:
+      account: egpyegg-lm49313
+      database: RAW
+      password: dbtPassword123
+      role: TRANSFORM
+      schema: AIRBNB
+      threads: 1
+      type: snowflake
+      user: dbt
+      warehouse: COMPUTE_WH
+  target: dev
+dbtlearn:
+  outputs:
+    dev:
+      account: EPEVRIS.GB04164
+      database: AIRBNB
+      password: dbtPassword123
+      role: transform
+      schema: DEV
+      threads: 1
+      type: snowflake
+      user: dbt
+      warehouse: COMPUTE_WH
+  target: dev
+dbtlearn2:
+  outputs:
+    dev:
+      account: uw96879.us-east-2.aws
+      database: AIRBNB
+      password: dbtPassword123
+      role: transform
+      schema: DEV
+      threads: 1
+      type: snowflake
+      user: dbt
+      warehouse: COMPUTE_WH
+  target: dev
