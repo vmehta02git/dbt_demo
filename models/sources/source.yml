@@ -1,0 +1,30 @@
+version: 2
+
+sources:
+  - name: raw_airbnb
+    database: raw
+    schema: airbnb
+    tables:
+      - name: hosts
+        identifier: raw_hosts
+
+      - name: listings
+        identifier: raw_listings
+        description: "This is listing table description"
+          # columns:
+          # - name: id
+          #   description: "Primary key"
+          #   tests:
+          #     - unique
+          #     - not_null
+          # - name: name
+          #   description: "Name of the entity"
+          #   tests:
+          #     - not_null
+          # - name: created_at
+          #   description: "Timestamp when the record was created"
+          #   tests:
+          #     - not_null
+          #     - timestamp
+      - name: reviews
+        identifier: raw_reviews

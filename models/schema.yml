@@ -1,0 +1,23 @@
+
+version: 2
+
+models:
+  - name: src_hosts
+    description: "A starter dbt model"
+    # columns:
+    #   - name: id
+    #     description: "The primary key for this table"
+    #     data_tests:
+    #       - unique
+    #       - not_null
+
+  - name: src_listings
+    description: "A starter dbt model"
+    # columns:
+    #   - name: id
+    #     description: "The primary key for this table"
+    #     data_tests:
+    #       - unique
+    #       - not_null
+  - name: src_reviews
+    description: "A starter dbt model"
