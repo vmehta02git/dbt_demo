@@ -3,7 +3,7 @@ WITH raw_hosts AS (
     SELECT
 *
 FROM
-       source("airbnb", "hosts")
+       {{source('raw_airbnb','hosts')}}
 )
 SELECT
 id AS host_id,NAME AS host_name, is_superhost, created_at, updated_at

@@ -1,6 +1,7 @@
-WITH raw_reviews AS ( SELECT
-*
-FROM source("airbnb", "reviews")
+WITH raw_reviews AS ( 
+    SELECT
+        *
+    FROM {{source("raw_airbnb", "reviews")}}
 )
 SELECT
 listing_id,
