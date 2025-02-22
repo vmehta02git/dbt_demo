@@ -35,7 +35,7 @@ models:
     staging: 
       +database : stg
       +schema: airbnb
-      +materialized: view
+      +materialized: ephemeral
     integration: 
       +database : int
       +schema: airbnb
