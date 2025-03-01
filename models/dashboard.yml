@@ -1,0 +1,16 @@
+version: 2
+exposures:
+  - name: Executive Dashboard
+    label: Executive Dashboard
+    type: dashboard
+    maturity: low
+    url: https://31ff7968.us1a.app.preset.io/superset/dashboard/8/?edit=true&native_filters_key=G_0obkwaQYaxr5GKvvDfjIsyIJVjQr5l0rI-Tak0KiByDKWpsdjMrJsaHpeWxdS2
+    description: Executive Dashboard about Airbnb listings and hosts
+
+    depends_on:
+      - ref('dim_listings_w_hosts')
+      - ref('full_moon_reviews')
+ 
+    owner: Vir
+      name: dbt
+      email: vmehta02@yahoo.com

@@ -1,0 +1,32 @@
+version: 2
+
+
+models:
+  - name: dim_listings
+    description: listing dimensional table
+    columns:
+      - name: listing_id
+        description: unique listing id
+        type: integer
+        tests:
+          - unique
+          - not_null
+        
+      - name: host_id
+        description: unique host id from host table
+        type: integer
+        tests:
+          - not_null
+          - relationships: {to: ref('dim_hosts'), field: host_id}
+        
+      - name: room_type
+        description: type of room
+        type: string
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['Entire home/apt', 'Private room', 'Shared room','Hotel room']
+
+      - name: minimum_nights
+        description: '{{ doc("dim_listings_minimum_nights") }}'
+        type: integer
