@@ -25,8 +25,24 @@ models:
         tests:
           - not_null
           - accepted_values:
-              values: ['Entire home/apt', 'Private room', 'Shared room','Hotel room']
+              values: ['Entire home/apt', 'Private room', 'Shared room','Hotel room','Entire home/apt_change']
+          - dbt_expectations.expect_column_distinct_count_to_equal:
+              value: 5
+
 
       - name: minimum_nights
         description: '{{ doc("dim_listings_minimum_nights") }}'
         type: integer
+
+  - name: dim_listings_w_hosts
+    tests:
+      - dbt_expectations.expect_table_row_count_to_equal_other_table:
+          compare_model: source('raw_airbnb', 'listings')
+    columns:
+      - name: price
+        tests:
+          - dbt_expectations.expect_column_mean_to_be_between:
+              min_value: 10
+              max_value: 500
+              config:
+                severity: warn
